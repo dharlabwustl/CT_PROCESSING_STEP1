@@ -3,11 +3,12 @@
 SESSION_ID=${1}
 XNAT_USER=${2}
 XNAT_PASS=${3}
-TYPE_OF_PROGRAM=${4}
+XNAT_HOST=${4}
+TYPE_OF_PROGRAM=${5}
 echo ${TYPE_OF_PROGRAM}::TYPE_OF_PROGRAM
 if [[ ${TYPE_OF_PROGRAM} == 2 ]] ;
 then
-    /software/nwucalculation_session_level_allsteps_November14_2022.sh $SESSION_ID $XNAT_USER $XNAT_PASS $XNAT_HOST /input /output
+    /software/processing_before_segmentation.sh $SESSION_ID $XNAT_USER $XNAT_PASS $XNAT_HOST /input /output
 fi
 #if [[ ${TYPE_OF_PROGRAM} == 1 ]] ;
 #then
