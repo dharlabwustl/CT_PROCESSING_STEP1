@@ -5,62 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33d5bb5b-874e-4616-882d-a7f4f094f636" name="Changes" comment="Initial commit 1">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rundockercommand.sh" beforeDir="false" afterPath="$PROJECT_DIR$/rundockercommand.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script_to_call_main_program.sh" beforeDir="false" afterPath="$PROJECT_DIR$/script_to_call_main_program.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/ARCHIVE/combine_edema_markers_csvs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/ARCHIVE/dcm2niftisessionlevel.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/ARCHIVE/edema_biomarker_allstepsSession.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/ARCHIVE/edema_biomarker_allstepsSessionusinggithub.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/ARCHIVE/edema_biomarker_scan_level_allsteps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/DecompressDCM.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/Dockerfile_part1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/EDEMA_MARKERS.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/bash_functions_forhost.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/bashtowriteDockerfile.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/bashtowriteDockerfile1.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/bet_linr_midlinereg_fsl_snipr_04142022.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/bet_linreg_midline_nwu.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/bet_withlevelset.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/builddockerimage.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/combineCSVs.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/combineCSVs.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/combine_csvs_and_copy_pdfs_projectlevel_Nov15_2022.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/createdirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/createdirectories_new.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/createdirectories_new1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/dicom2nifiti_sessionlevel_selected.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/dicom2nifti_call_sessionlevel_selected.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/dicom2nifticonversion_usinggithub.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/download_with_session_ID.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/downloadcodefromgithub.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/edema_biomarker_allstepsSessionusinggithub.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/github_dealing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/hello.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/ideal_midline_fslpart.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/ideal_midline_pythonpart.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/linear_rigid_registration.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/midlinecssfResampled1.nii.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/module_NWU_CSFCompartment_Calculations.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/module_NWU_CSFCompartment_CalculationsBASELINE.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/module_midline1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/nwu_csf_volume.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/nwu_csf_volumeBASELINE.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/nwucalculation_scan_level_allsteps.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/nwucalculation_session_level_allsteps_November14_2022.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/nwucalculation_session_level_allsteps_November2_2022.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/rundockercommand.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/rundockercommand_fordcm2nifti.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/scct_strippedResampled1.nii.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/script_to_call_main_program.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/utilities_simple.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/utilities_simple_trimmed.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/utilitiesforyashengsdocker.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/software/EDEMA_MARKERS_PROD/xnatSession.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile_part1" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile_part1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/builddockerimage.sh" beforeDir="false" afterPath="$PROJECT_DIR$/builddockerimage.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloadcodefromgithub.sh" beforeDir="false" afterPath="$PROJECT_DIR$/downloadcodefromgithub.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +50,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671557780906</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial commit 1">
+      <created>1671559156345</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1671559156345</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Initial commit 1">
+      <created>1671559211290</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1671559211290</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

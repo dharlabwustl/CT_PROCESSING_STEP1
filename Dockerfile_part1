@@ -1,4 +1,5 @@
-FROM sharmaatul11/fsl502py369ltx-full:latest
+#FROM sharmaatul11/fsl502py369ltx-full:latest
+FROM sharmaatul11/yashengstep1withfsl:latest
 RUN apt update
 COPY scct_strippedResampled1.nii.gz   /templatenifti/
 COPY  midlinecssfResampled1.nii.gz   /templatemasks/
@@ -7,7 +8,6 @@ RUN chmod 755 /callfromgithub
 COPY downloadcodefromgithub.sh /callfromgithub/
 RUN chmod +x /callfromgithub/downloadcodefromgithub.sh
 RUN apt install -y \
-  dcm2niix  \ 
   vim  \ 
   zip  \ 
   unzip  \ 
