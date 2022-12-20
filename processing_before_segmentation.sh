@@ -131,6 +131,9 @@ get_maskfile_scan_metadata()" ${sessionId}  ${scanId}  ${resource_foldername} ${
 niftifile_csvfilename=${working_dir}/'this_session_final_ct.csv'
 get_nifti_scan_uri ${sessionID}  ${working_dir} ${niftifile_csvfilename}
 copy_scan_data ${niftifile_csvfilename} ${working_dir}
+/software/stroke_ct_processing_1.sh /workinginput /workingoutput
+/software/step4_bet.sh /workingoutput
+/software/stroke_ct_processing_2.sh /workinginput /workingoutput
 
 
 
