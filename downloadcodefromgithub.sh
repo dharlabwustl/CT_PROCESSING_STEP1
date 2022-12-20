@@ -1,7 +1,7 @@
 #!/bin/bash
 cd /software/
 git_link=${4}
-git clone ${git_link} #https://github.com/dharlabwustl/EDEMA_MARKERS_PROD.git
+git clone ${git_link}
 y=${git_link%.git}
 git_dir=$(basename $y)
 mv ${git_dir}/* /software/

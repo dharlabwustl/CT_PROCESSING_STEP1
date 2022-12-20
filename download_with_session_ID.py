@@ -128,6 +128,7 @@ def call_decision_which_nifti():
     decision_which_nifti(sessionId,dir_to_receive_the_data,output_csvfile)
     
 def decision_which_nifti(sessionId,dir_to_receive_the_data="",output_csvfile=""):
+    print("I AM HERE:decision_which_nifti")
     # sessionId=sys.argv[1]
     # dir_to_receive_the_data="./NIFTIFILEDIR" #sys.argv[2]
     # output_csvfile='test.csv' #sys.argv[3]

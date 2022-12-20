@@ -9,7 +9,7 @@ if [[ ${TYPE_OF_PROGRAM} == 2 ]] ;
 then
     /software/nwucalculation_session_level_allsteps_November14_2022.sh $SESSION_ID $XNAT_USER $XNAT_PASS $XNAT_HOST /input /output
 fi
-if [[ ${TYPE_OF_PROGRAM} == 1 ]] ;
-then 
-    /software/dicom2nifti_call_sessionlevel_selected.sh  ${SESSION_ID} $XNAT_USER $XNAT_PASS $XNAT_HOST
-fi 
+#if [[ ${TYPE_OF_PROGRAM} == 1 ]] ;
+#then
+#    /software/dicom2nifti_call_sessionlevel_selected.sh  ${SESSION_ID} $XNAT_USER $XNAT_PASS $XNAT_HOST
+#fi
