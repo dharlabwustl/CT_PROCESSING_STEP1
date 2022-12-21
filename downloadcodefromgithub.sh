@@ -7,6 +7,7 @@ y=${git_link%.git}
 git_dir=$(basename $y)
 mv /software/${git_dir}/* /software/
 cp -r  /Stroke_CT_Processing/* /software/
+sed -i 's/Stroke_CT_Processing/software/g' /software/*
 chmod +x /software/*.sh 
 
 SESSION_ID=${1}
