@@ -416,6 +416,7 @@ def findthetargetscan():
      return target_scan
 
 def uploadfile():
+    print("FILE UPLOADED:{}".format('uploadfile'))
     sessionId=str(sys.argv[1])
     scanId=str(sys.argv[2])
     input_dirname=str(sys.argv[3])
