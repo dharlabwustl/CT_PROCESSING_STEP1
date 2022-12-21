@@ -429,10 +429,12 @@ def uploadfile():
         files={'file':open(eachniftifile,'rb')}
         response = xnatSession.httpsess.post(xnatSession.host + url,files=files)
         print(response)
+        print("FILE UPLOADED:{}".format(eachniftifile))
     xnatSession.close_httpsession()
     # for eachniftifile in allniftifiles:
     #     command= 'rm  ' + eachniftifile
     #     subprocess.call(command,shell=True)
+
     return True 
 
 def uploadfile_projectlevel():
