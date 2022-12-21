@@ -2,10 +2,10 @@
 cd /software/
 rm -r /software/*
 git_link=${5}
-git clone ${git_link}
+git clone ${git_link}  /software/
 y=${git_link%.git}
 git_dir=$(basename $y)
-mv ${git_dir}/* /software/
+mv /software/${git_dir}/* /software/
 cp -r  /Stroke_CT_Processing/* /software/
 chmod +x /software/*.sh 
 
