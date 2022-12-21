@@ -157,6 +157,7 @@ snipr_output_foldername="PREPROCESS_SEGM"
 file_suffixes=(  .* ) #sys.argv[5]
 for file_suffix in ${file_suffixes[@]}
 do
+    echo "COPYING FILES TO ${snipr_output_foldername} "
     copyoutput_to_snipr  ${sessionID} ${scanID} "${final_output_directory}"  ${snipr_output_foldername}  ${file_suffix}
 done
 ######################################################################################################################
