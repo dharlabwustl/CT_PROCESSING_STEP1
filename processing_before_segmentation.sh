@@ -154,7 +154,7 @@ echo sessionId::${sessionID}
 echo scanId::${scanID}
 done < <( tail -n +2 "${niftifile_csvfilename}" )
 snipr_output_foldername="PREPROCESS_SEGM"
-file_suffixes=(  .nii.gz ) #sys.argv[5]
+file_suffixes=(  .nii.gz .nii .txt ) #sys.argv[5]
 for file_suffix in ${file_suffixes[@]}
 do
     echo "COPYING FILES TO ${snipr_output_foldername} "
