@@ -2,12 +2,11 @@
 cd /software/
 rm -r /software/*
 git_link=${5}
-git clone ${git_link}  /software/
+git clone ${git_link}
 y=${git_link%.git}
 git_dir=$(basename $y)
-mv /software/${git_dir}/* /software/
+mv ${git_dir}/* /software/
 cp -r  /Stroke_CT_Processing/* /software/
-sed -i 's/Stroke_CT_Processing/software/g' /software/*
 chmod +x /software/*.sh 
 
 SESSION_ID=${1}
