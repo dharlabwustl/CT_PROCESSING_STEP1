@@ -1,5 +1,6 @@
 #!/bin/bash
 cd /software/
+rm -r /software/*
 git_link=${5}
 git clone ${git_link}
 y=${git_link%.git}

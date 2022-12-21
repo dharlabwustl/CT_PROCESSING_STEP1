@@ -15,7 +15,7 @@ RUN apt install -y \
   curl  \
   git \
   tree
-RUN pip install \
+RUN pip3 install \
   nibabel  \
   numpy  \
   xmltodict  \
