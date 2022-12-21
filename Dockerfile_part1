@@ -9,21 +9,21 @@ COPY downloadcodefromgithub.sh /callfromgithub/
 RUN chmod +x /callfromgithub/downloadcodefromgithub.sh
 RUN cp -r  /usr/share/fsl/5.0/* /usr/lib/fsl/5.0/
 RUN apt install -y \
-  vim  \ 
-  zip  \ 
-  unzip  \ 
-  curl  \ 
+  vim  \
+  zip  \
+  unzip  \
+  curl  \
   git \
-  tree  
+  tree
 RUN pip install \
-  nibabel  \ 
-  numpy  \ 
-  xmltodict  \ 
-  pandas  \ 
-  requests  \ 
-  pydicom  \ 
-  python-gdcm  \ 
-  glob2  \ 
-  scipy  \ 
+  nibabel  \
+  numpy  \
+  xmltodict  \
+  pandas  \
+  requests  \
+  pydicom  \
+  python-gdcm  \
+  glob2  \
+  scipy  \
   pypng  \
-  PyGithub 
+  PyGithub

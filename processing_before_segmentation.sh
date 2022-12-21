@@ -135,9 +135,9 @@ working_dir=/workinginput
 output_directory=/workingoutput
 
 final_output_directory=/outputinsidedocker
-/software/stroke_ct_processing_1.sh ${working_dir} ${output_directory}
-/software/step4_bet.sh ${output_directory}
-/software/stroke_ct_processing_2.sh ${output_directory} ${output_directory}
+#/software/stroke_ct_processing_1.sh ${working_dir} ${output_directory}
+#/software/step4_bet.sh ${output_directory}
+#/software/stroke_ct_processing_2.sh ${output_directory} ${output_directory}
 ######################################################################################################################
 
 for file in ${output_directory}/*
