@@ -131,10 +131,30 @@ get_maskfile_scan_metadata()" ${sessionId}  ${scanId}  ${resource_foldername} ${
 niftifile_csvfilename=${working_dir}/'this_session_final_ct.csv'
 get_nifti_scan_uri ${sessionID}  ${working_dir} ${niftifile_csvfilename}
 copy_scan_data ${niftifile_csvfilename} ${working_dir}
-/software/stroke_ct_processing_1.sh /workinginput /workingoutput
-/software/step4_bet.sh /workingoutput
-/software/stroke_ct_processing_2.sh /workinginput /workingoutput
+working_dir=/workinginput
+output_directory=/workingoutput
 
+final_output_directory=/outputinsidedocker
+/software/stroke_ct_processing_1.sh ${working_dir} ${output_directory}
+/software/step4_bet.sh ${output_directory}
+/software/stroke_ct_processing_2.sh ${output_directory} ${output_directory}
+######################################################################################################################
+
+for file in ${output_directory}/*
+do
+  cp $file ${final_output_directory}/
+done
+######################################################################################################################
+
+######################################################################################################################
+## COPY IT TO THE SNIPR RESPECTIVE SCAN RESOURCES
+snipr_output_foldername="PREPROCESS_SEGM"
+file_suffixes=(  .nii.gz ) #sys.argv[5]
+for file_suffix in ${file_suffixes[@]}
+do
+    copyoutput_to_snipr  ${sessionID} ${scanID} "${final_output_directory}"  ${snipr_output_foldername}  ${file_suffix}
+done
+######################################################################################################################
 
 
 

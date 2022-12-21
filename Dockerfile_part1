@@ -7,6 +7,7 @@ RUN mkdir -p /callfromgithub
 RUN chmod 755 /callfromgithub
 COPY downloadcodefromgithub.sh /callfromgithub/
 RUN chmod +x /callfromgithub/downloadcodefromgithub.sh
+RUN cp -r  /usr/share/fsl/5.0/* /usr/lib/fsl/5.0/
 RUN apt install -y \
   vim  \ 
   zip  \ 
