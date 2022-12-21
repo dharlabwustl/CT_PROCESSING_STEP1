@@ -148,6 +148,11 @@ done
 
 ######################################################################################################################
 ## COPY IT TO THE SNIPR RESPECTIVE SCAN RESOURCES
+while IFS=',' read -ra array; do
+scanID=${array[2]}
+echo sessionId::${sessionID}
+echo scanId::${scanID}
+done < <( tail -n +2 "${niftifile_csvfilename}" )
 snipr_output_foldername="PREPROCESS_SEGM"
 file_suffixes=(  .nii.gz ) #sys.argv[5]
 for file_suffix in ${file_suffixes[@]}
@@ -165,11 +170,7 @@ done
 ######################################################################################
 #resource_dirname='MASKS'
 #output_dirname=${working_dir}
-#while IFS=',' read -ra array; do
-#scanID=${array[2]}
-#echo sessionId::${sessionID}
-#echo scanId::${scanID}
-#done < <( tail -n +2 "${niftifile_csvfilename}" )
+
 #echo working_dir::${working_dir}
 #echo output_dirname::${output_dirname}
 #copy_masks_data   ${sessionID}  ${scanID} ${resource_dirname} ${output_dirname}
