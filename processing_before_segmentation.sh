@@ -135,9 +135,9 @@ working_dir=/workinginput
 output_directory=/workingoutput
 
 final_output_directory=/outputinsidedocker
-/software/stroke_ct_processing_1.sh ${working_dir} ${output_directory}
-/software/step4_bet.sh ${output_directory}
-/software/stroke_ct_processing_2.sh ${output_directory} ${output_directory}
+#/software/stroke_ct_processing_1.sh ${working_dir} ${output_directory}
+#/software/step4_bet.sh ${output_directory}
+#/software/stroke_ct_processing_2.sh ${output_directory} ${output_directory}
 ######################################################################################################################
 
 for file in ${output_directory}/*
@@ -154,7 +154,7 @@ echo sessionId::${sessionID}
 echo scanId::${scanID}
 done < <( tail -n +2 "${niftifile_csvfilename}" )
 snipr_output_foldername="PREPROCESS_SEGM"
-file_suffixes=(  .nii.gz ) #sys.argv[5]
+file_suffixes=(  .* ) #sys.argv[5]
 for file_suffix in ${file_suffixes[@]}
 do
     copyoutput_to_snipr  ${sessionID} ${scanID} "${final_output_directory}"  ${snipr_output_foldername}  ${file_suffix}
