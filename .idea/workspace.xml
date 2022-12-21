@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33d5bb5b-874e-4616-882d-a7f4f094f636" name="Changes" comment="Initial commit 2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing_before_segmentation.sh" beforeDir="false" afterPath="$PROJECT_DIR$/processing_before_segmentation.sh" afterDir="false" />
-    </list>
+    <list default="true" id="33d5bb5b-874e-4616-882d-a7f4f094f636" name="Changes" comment="Initial commit 2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671637993213</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Initial commit 2">
+      <created>1671638948357</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1671638948357</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
