@@ -1,5 +1,6 @@
 #!/bin/bash 
-
+sed -i 's/Stroke_CT_Processing/software/g' /software/*
+chmod +x /software/*.sh
 SESSION_ID=${1}
 XNAT_USER=${2}
 XNAT_PASS=${3}
