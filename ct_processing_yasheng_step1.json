@@ -6,7 +6,7 @@
   "image": "registry.nrg.wustl.edu/docker/nrg-repo/sharmaatul11/yashengstep1:latest",
   "type": "docker",
   "working-directory": "/callfromgithub",
-  "command-line": " /callfromgithub/downloadcodefromgithub.sh #SESSION_ID# $XNAT_USER $XNAT_PASS https://snipr.wustl.edu https://github.com/dharlabwustl/EDEMA_MARKERS_PROD.git 1 ",
+  "command-line": " /callfromgithub/downloadcodefromgithub.sh #SESSION_ID# $XNAT_USER $XNAT_PASS https://snipr.wustl.edu https://github.com/dharlabwustl/CT_PROCESSING_STEP1.git 1 ",
   "override-entrypoint": true,
   "mounts": [
     {
