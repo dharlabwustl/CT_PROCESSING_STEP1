@@ -165,7 +165,7 @@ echo working_dir::${working_dir}
 echo output_dirname::${output_dirname}
 copy_allfiles_data   ${sessionID}  ${scanID} ${resource_dirname} ${output_dirname}
 ####################
-/software/Stroke_CT_Processing/stroke_ct_processing_1.sh ${working_dir} ${output_directory}
+/software/Stroke_CT_Processing/stroke_ct_processing_3.sh ${working_dir} ${output_directory}
 
 ######################################################################################################################
 
