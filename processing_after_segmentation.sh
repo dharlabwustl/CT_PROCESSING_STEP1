@@ -189,7 +189,7 @@ echo sessionId::${sessionID}
 echo scanId::${scanID}
 done < <( tail -n +2 "${niftifile_csvfilename}" )
 snipr_output_foldername="MASKS"
-file_suffixes=(  .nii.gz .nii .txt ) #sys.argv[5]
+file_suffixes=(  _resaved_levelset.nii.gz _resaved_csf_unet.nii.gz _resaved_infarct_auto.nii.gz _resaved_infarct_auto_removesmall.nii.gz _resaved_levelset_bet.nii.gz ) #sys.argv[5]
 for file_suffix in ${file_suffixes[@]}
 do
     echo "COPYING FILES TO ${snipr_output_foldername} "
