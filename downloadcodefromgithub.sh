@@ -1,28 +1,30 @@
 #!/bin/bash
-#cd /software/
-#rm -r /software/*
-#git_link=${5}
-#git clone ${git_link}
-#y=${git_link%.git}
-#git_dir=$(basename $y)
-##find /software/${git_dir}/* -type f -exec sed -i "s/python/\/root\/anaconda3\/envs\/tf\/bin\/python'/g" {} \;
-##find /software/${git_dir}/* -type f -exec sed -i "s/python/\/root\/anaconda3\/envs\/tf\/bin\/python'/g" {} \;
-#mv ${git_dir}/* /software/
-#cp -r  /Stroke_CT_Processing /software/
-#chmod +x /software/Stroke_CT_Processing/*.sh
-#chmod +x /software/*.sh
-#
-#find /software/Stroke_CT_Processing/* -type f -exec sed -i "s/\/Stroke_CT_Processing/\/software\/Stroke_CT_Processing/g" {} \;
-#
+export MCR_CACHE_ROOT=/workinginput
 cd /software/
 rm -r /software/*
 git_link=${5}
 git clone ${git_link}
 y=${git_link%.git}
 git_dir=$(basename $y)
+#find /software/${git_dir}/* -type f -exec sed -i "s/python/\/root\/anaconda3\/envs\/tf\/bin\/python'/g" {} \;
+#find /software/${git_dir}/* -type f -exec sed -i "s/python/\/root\/anaconda3\/envs\/tf\/bin\/python'/g" {} \;
 mv ${git_dir}/* /software/
-cp -r  /Stroke_CT_Processing/* /software/
+cp -r  /Stroke_CT_Processing /software/
+chmod +x /software/Stroke_CT_Processing/*.sh
 chmod +x /software/*.sh
+for x in  /software/Stroke_CT_Processing/*/* ; do chmod +x $x ; done
+for x in  /software/Stroke_CT_Processing/* ; do chmod +x $x ; done
+find /software/Stroke_CT_Processing/* -type f -exec sed -i "s/\/Stroke_CT_Processing/\/software\/Stroke_CT_Processing/g" {} \;
+#
+#cd /software/
+#rm -r /software/*
+#git_link=${5}
+#git clone ${git_link}
+#y=${git_link%.git}
+#git_dir=$(basename $y)
+#mv ${git_dir}/* /software/
+#cp -r  /Stroke_CT_Processing/* /software/
+#chmod +x /software/*.sh
 
 SESSION_ID=${1}
 XNAT_USER=${2}

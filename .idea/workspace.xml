@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="33d5bb5b-874e-4616-882d-a7f4f094f636" name="Changes" comment="commit day 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile_part1" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile_part1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloadcodefromgithub.sh" beforeDir="false" afterPath="$PROJECT_DIR$/downloadcodefromgithub.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/processing_before_segmentation.sh" beforeDir="false" afterPath="$PROJECT_DIR$/processing_before_segmentation.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -363,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671723141763</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="commit day 3">
+      <created>1671725925825</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1671725925825</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

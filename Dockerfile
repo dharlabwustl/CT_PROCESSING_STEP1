@@ -7,7 +7,11 @@ RUN mkdir -p /callfromgithub
 RUN chmod 755 /callfromgithub
 COPY downloadcodefromgithub.sh /callfromgithub/
 RUN chmod +x /callfromgithub/downloadcodefromgithub.sh
+RUN chmod +x /Stroke_CT_Processing/*.sh
 RUN cp -r  /usr/share/fsl/5.0/* /usr/lib/fsl/5.0/
+RUN chmod 755 /Stroke_CT_Processing
+RUN for x in  /Stroke_CT_Processing/*/* ; do chmod +x $x ; done
+RUN for x in  /Stroke_CT_Processing/* ; do chmod +x $x ; done
 RUN apt install -y \
   vim  \
   zip  \
