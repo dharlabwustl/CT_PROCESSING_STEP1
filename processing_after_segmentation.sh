@@ -159,11 +159,11 @@ echo sessionId::${sessionID}
 echo scanId::${scanID}
 done < <( tail -n +2 "${niftifile_csvfilename}" )
 resource_dirname='PREPROCESS_SEGM'
-output_dirname=${working_dir}
+output_dirname=${output_directory}
 
 echo working_dir::${working_dir}
 echo output_dirname::${output_dirname}
-copy_allfiles_data   ${sessionID}  ${scanID} ${resource_dirname} ${output_dirname}
+copy_allfiles_data   ${sessionID}  ${scanID} ${resource_dirname} ${output_directory}
 ####################
 /software/Stroke_CT_Processing/stroke_ct_processing_3.sh ${working_dir} ${output_directory}
 
