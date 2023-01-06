@@ -13,3 +13,7 @@ if [[ ${TYPE_OF_PROGRAM} == 1 ]] ;
 then
     /software/processing_after_segmentation.sh $SESSION_ID $XNAT_USER $XNAT_PASS $XNAT_HOST /input /output
 fi
+if [[ ${TYPE_OF_PROGRAM} == 3 ]] ;
+then
+    /software/download_nifti_file.sh $SESSION_ID $XNAT_USER $XNAT_PASS $XNAT_HOST /input /output
+fi
