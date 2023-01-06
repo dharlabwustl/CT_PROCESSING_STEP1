@@ -131,20 +131,20 @@ get_maskfile_scan_metadata()" ${sessionId}  ${scanId}  ${resource_foldername} ${
 niftifile_csvfilename=${working_dir}/'this_session_final_ct.csv'
 get_nifti_scan_uri ${sessionID}  ${working_dir} ${niftifile_csvfilename}
 copy_scan_data ${niftifile_csvfilename} ${working_dir}
-#working_dir=/workinginput
-#output_directory=/workingoutput
+working_dir=/workinginput
+output_directory=/workingoutput
 #
-#final_output_directory=/outputinsidedocker
+final_output_directory=/outputinsidedocker
 #/software/Stroke_CT_Processing/stroke_ct_processing_1.sh ${working_dir} ${output_directory}
 #/software/Stroke_CT_Processing/step4_bet.sh ${output_directory}
 #/software/Stroke_CT_Processing/stroke_ct_processing_2.sh ${output_directory} ${output_directory}
 
 ######################################################################################################################
 
-#for file in ${output_directory}/*
-#do
-#  cp $file ${final_output_directory}/
-#done
+for file in ${working_dir}/*
+do
+  cp $file ${final_output_directory}/
+done
 ######################################################################################################################
 
 ######################################################################################################################
