@@ -15,6 +15,9 @@ chmod +x /software/*.sh
 for x in  /software/Stroke_CT_Processing/*/* ; do chmod +x $x ; done
 for x in  /software/Stroke_CT_Processing/* ; do chmod +x $x ; done
 find /software/Stroke_CT_Processing/* -type f -exec sed -i "s/\/Stroke_CT_Processing/\/software\/Stroke_CT_Processing/g" {} \;
+find /software/Stroke_CT_Processing/step4_bet.sh -type f -exec sed -i "s/bet/\/usr\/lib\/fsl\/5.0\/bet/g" {} \;
+
+#/usr/lib/fsl/5.0/
 #
 #cd /software/
 #rm -r /software/*
