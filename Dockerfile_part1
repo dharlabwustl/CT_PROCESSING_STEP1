@@ -30,4 +30,5 @@ RUN pip3 install \
   glob2  \
   scipy  \
   pypng  \
+  requests \
   PyGithub
