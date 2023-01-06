@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="33d5bb5b-874e-4616-882d-a7f4f094f636" name="Changes" comment="commit day 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script_to_call_main_program.sh" beforeDir="false" afterPath="$PROJECT_DIR$/script_to_call_main_program.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/download_nifti_file.sh" beforeDir="false" afterPath="$PROJECT_DIR$/download_nifti_file.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,13 +47,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671557538749</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Initial commit 2">
-      <created>1671639237132</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1671639237132</updated>
     </task>
     <task id="LOCAL-00017" summary="Initial commit 2">
       <created>1671639295182</created>
@@ -391,7 +384,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673035248769</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="commit day 3">
+      <created>1673036412573</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1673036412573</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

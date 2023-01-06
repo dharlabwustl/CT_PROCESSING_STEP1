@@ -141,7 +141,7 @@ final_output_directory=/outputinsidedocker
 
 ######################################################################################################################
 
-for file in ${working_dir}/*
+for file in ${working_dir}/*.nii*
 do
   cp $file ${final_output_directory}/
 done
