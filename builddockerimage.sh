@@ -12,7 +12,7 @@ python /media/atul/WDJan2022/WASHU_WORKS/PROJECTS/FROM_DOCUMENTS/docker-images/c
 # imagename=$1
 imagename=${2} #'processingforsegm' ##yashengstep1'
 #fsl502py369withpacksnltx
-#docker build -t sharmaatul11/${imagename} .
-#docker push sharmaatul11/${imagename}
-docker build -t registry.nrg.wustl.edu/docker/nrg-repo/sharmaatul11/${imagename} ${parent_dir}
-docker push registry.nrg.wustl.edu/docker/nrg-repo/sharmaatul11/${imagename}
+docker build -t sharmaatul11/${imagename} .
+docker push sharmaatul11/${imagename}
+#docker build -t registry.nrg.wustl.edu/docker/nrg-repo/sharmaatul11/${imagename} ${parent_dir}
+#docker push registry.nrg.wustl.edu/docker/nrg-repo/sharmaatul11/${imagename}
