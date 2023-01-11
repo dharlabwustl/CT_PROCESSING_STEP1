@@ -182,12 +182,12 @@ def decision_which_nifti(sessionId,dir_to_receive_the_data="",output_csvfile="")
             for each_item_id,each_nifti in df_scan.iterrows():
                 print(each_nifti['URI'])
                 if '.nii' in each_nifti['Name'] or '.nii.gz' in each_nifti['Name']:
-                    x=[each_nifti['URI'],each_nifti['Name'],each_axial['ID']]
+                    x=[each_nifti['URI'],each_nifti['Name'],each_thin['ID']]
                     list_of_usables.append([each_nifti['URI'],each_nifti['Name'],each_thin['ID']])
-                    x=[each_nifti['URI'],each_nifti['Name'],each_axial['ID']]
+                    x=[each_nifti['URI'],each_nifti['Name'],each_thin['ID']]
                     downloadniftiwithuri(x,dir_to_receive_the_data)
                     number_slice=nifti_number_slice(os.path.join(dir_to_receive_the_data,x[1]))
-                    list_of_usables_withsize.append([each_nifti['URI'],each_nifti['Name'],each_axial['ID'],number_slice])      
+                    list_of_usables_withsize.append([each_nifti['URI'],each_nifti['Name'],each_thin['ID'],number_slice])
                     deleteafile(os.path.join(dir_to_receive_the_data,x[1]))                    
   
             # break
