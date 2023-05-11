@@ -142,7 +142,7 @@ echo scanId::${scanID}
 resource_foldername="PREPROCESS_SEGM"
 ### check if the file exists:
 call_check_if_a_file_exist_in_snipr_arguments=('call_check_if_a_file_exist_in_snipr' ${sessionId}  ${scanID}  ${resource_foldername} _resaved.nii.gz _normalized.nii.gz _levelset.nii.gz _levelset_bet.nii.gz _4DL_seg.nii.gz)
-outputfiles_present=$(python download_with_session_ID.py "${call_check_if_a_file_exist_in_snipr_arguments[@]}" )
+outputfiles_present=$(python3 download_with_session_ID.py "${call_check_if_a_file_exist_in_snipr_arguments[@]}" )
 done < <( tail -n +2 "${niftifile_csvfilename}" )
 ################################################
 if [[ $call_check_if_a_file_exist_in_snipr_arguments -eq 0 ]] ; then
