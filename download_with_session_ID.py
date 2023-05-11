@@ -7,6 +7,7 @@ import re
 import requests
 import pandas as pd
 import nibabel as nib
+import argparse
 # import pydicom as dicom
 import pathlib
 from xnatSession import XnatSession
@@ -681,151 +682,50 @@ def copy_allfiles_to_a_dir(dir_name):
             command='cp ' + os.path.join(dirpath,file_name) + '  ' + dir_name + '/'
             subprocess.call(command,shell=True)
             print(os.path.join(dirpath,file_name))
-# def uploadfile():
-#     sessionId=str(sys.argv[1])
-#     scanId=str(sys.argv[2])
-#     input_dirname=str(sys.argv[3])
-#     resource_dirname=str(sys.argv[4])
-#     file_suffix=str(sys.argv[5])
-#     xnatSession = XnatSession(username=XNAT_USER, password=XNAT_PASS, host=XNAT_HOST)
-#     xnatSession.renew_httpsession()
-#     url = (("/data/experiments/%s/scans/%s/resources/"+resource_dirname+"/files/") % (sessionId, scanId))
-#     allniftifiles=glob.glob(os.path.join(input_dirname,'*'+file_suffix) ) #input_dirname + '/*'+file_suffix)
-#     for eachniftifile in allniftifiles:
-#         files={'file':open(eachniftifile,'rb')}
-#         response = xnatSession.httpsess.post(xnatSession.host + url,files=files)
-#         print(response)
-#     xnatSession.close_httpsession()
-#     # for eachniftifile in allniftifiles:
-#     #     command= 'rm  ' + eachniftifile
-#     #     subprocess.call(command,shell=True)
-#     return True 
+def check_if_a_file_exist_in_snipr(URI, resource_dir,extension_to_find_list):
+    url = (URI+'/resources/' + resource_dir +'/files?format=json')
+    # print("url::{}".format(url))
+    xnatSession = XnatSession(username=XNAT_USER, password=XNAT_PASS, host=XNAT_HOST)
+    xnatSession.renew_httpsession()
+    response = xnatSession.httpsess.get(xnatSession.host + url)
+    num_files_present=0
+    if response.status_code != 200:
+        xnatSession.close_httpsession()
+        return num_files_present
+    metadata_masks=response.json()['ResultSet']['Result']
+    # print("metadata_masks::{}".format(metadata_masks))
+    df_scan = pd.read_json(json.dumps(metadata_masks))
+    for extension_to_find in extension_to_find_list:
+        for x in range(df_scan.shape[0]):
+            print(df_scan.loc[x,'Name'])
+            if extension_to_find in df_scan.loc[x,'Name']:
+                num_files_present=num_files_present+1
+    return num_files_present
+def call_check_if_a_file_exist_in_snipr( args):
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument('stuff', nargs='+')
+    # args = parser.parse_args()
+    # print (args.stuff)
+    sessionID=args.stuff[1]
+    scanID=args.stuff[2]
+    resource_dir=args.stuff[3]
+    URI="/data/experiments/"+sessionID+"/scans/"+scanID
+    extension_to_find_list=args.stuff[4:]
+    file_present=check_if_a_file_exist_in_snipr(URI, resource_dir,extension_to_find_list)
+    if file_present < len(extension_to_find_list):
+        return 0
+    return 1
+def main():
 
-
-# def downloadandcopyfile():
-#     sessionId=sys.argv[1]
-#     scanId=sys.argv[2]
-#     metadata_session=get_metadata_session(sessionId)
-#     decision=decide_image_conversion(metadata_session,scanId)
-#     command= 'rm -r /ZIPFILEDIR/*'
-#     subprocess.call(command,shell=True)
-#     if decision==True:
-#         xnatSession = XnatSession(username=XNAT_USER, password=XNAT_PASS, host=XNAT_HOST)
-#         xnatSession.renew_httpsession()
-#         outcome=get_nifti_using_xnat(sessionId, scanId)
-#         if outcome==False:
-#             print("NO DICOM FILE %s:%s:%s:%s" % (sessionId, scanId))
-#         xnatSession.close_httpsession()
-#         try :
-#             copy_nifti()
-#             print("COPIED TO WORKINGDIRECTORY")
-#         except:
-#             pass
-
-# def copy_nifti():
-#     for dirpath, dirnames, files in os.walk('/ZIPFILEDIR'):
-#     #                print(f'Found directory: {dirpath}')
-#         for file_name in files:
-#             file_extension = pathlib.Path(file_name).suffix
-#             if 'nii' in file_extension:
-#                 command='cp ' + os.path.join(dirpath,file_name) + '  /workinginput/'
-#                 subprocess.call(command,shell=True)
-#                 print(os.path.join(dirpath,file_name))
-
-
-
-
-# def get_slice_idx(nDicomFiles):
-#     return min(nDicomFiles-1, math.ceil(nDicomFiles*0.7)) # slice 70% through the brain
-
-# def get_metadata_session(sessionId):
-#     url = ("/data/experiments/%s/scans/?format=json" %    (sessionId))
-#     xnatSession = XnatSession(username=XNAT_USER, password=XNAT_PASS, host=XNAT_HOST)
-#     xnatSession.renew_httpsession()
-#     response = xnatSession.httpsess.get(xnatSession.host + url)
-#     xnatSession.close_httpsession()
-#     metadata_session=response.json()['ResultSet']['Result']
-#     return metadata_session
-# def get_metadata_session_forbash():
-#     sessionId=sys.argv[1]
-#     url = ("/data/experiments/%s/scans/?format=json" %    (sessionId))
-#     xnatSession = XnatSession(username=XNAT_USER, password=XNAT_PASS, host=XNAT_HOST)
-#     xnatSession.renew_httpsession()
-#     response = xnatSession.httpsess.get(xnatSession.host + url)
-#     xnatSession.close_httpsession()
-#     metadata_session=response.json()['ResultSet']['Result']
-#     print(metadata_session)
-#     data_file = open('this_sessionmetadata.csv', 'w')
-#     csv_writer = csv.writer(data_file)
-#     count = 0
-#     for data in metadata_session:
-#         if count == 0:
-#             header = data.keys()
-#             csv_writer.writerow(header)
-#             count += 1
-#         csv_writer.writerow(data.values())
-#     data_file.close()
-#     return metadata_session
-# def decide_image_conversion(metadata_session,scanId):
-#     decision=False 
-#     usable=False
-#     brain_type=False
-#     for x in metadata_session:
-#         if x['ID']  == scanId:
-#             print(x['ID'])
-#             # result_usability = response.json()['ResultSet']['Result'][0]['quality']
-#             result_usability = x['quality']
-# #             print(result)
-#             if 'usable' in result_usability.lower():
-#                 print(True)
-#                 usable=True
-#             result_type= x['type']
-#             if 'z-axial-brain' in result_type.lower() or 'z-brain-thin' in result_type.lower():
-#                 print(True)
-#                 brain_type=True
-#             break
-#     if usable==True and brain_type==True:
-#         decision =True
-#     return decision
-
-
-
-
-# def get_nifti_using_xnat(sessionId, scanId):
-#     xnatSession = XnatSession(username=XNAT_USER, password=XNAT_PASS, host=XNAT_HOST)
-#     url = ("/data/experiments/%s/scans/%s/resources/NIFTI/files?format=zip" % 
-#         (sessionId, scanId))
-
-#     xnatSession.renew_httpsession()
-#     response = xnatSession.httpsess.get(xnatSession.host + url)
-#     zipfilename=sessionId+scanId+'.zip'
-#     with open(zipfilename, "wb") as f:
-#         for chunk in response.iter_content(chunk_size=512):
-#             if chunk:  # filter out keep-alive new chunks
-#                 f.write(chunk)
-#     command = 'unzip -d /ZIPFILEDIR ' + zipfilename
-#     subprocess.call(command,shell=True)
-
-#     return True 
-
-
-# # if __name__ == '__main__':
-# #     sessionId='SNIPR_E03517' #sys.argv[1]
-# #     metadata_session=get_metadata_session(sessionId)
-# #     for x in metadata_session:
-# #         scanId=x['ID']
-# #         decision=decide_image_conversion(metadata_session,scanId)
-
-# #         command= 'rm -r /ZIPFILEDIR/*'
-# #         subprocess.call(command,shell=True)
-# #         if decision==True:
-# #             xnatSession = XnatSession(username=XNAT_USER, password=XNAT_PASS, host=XNAT_HOST)
-# #             xnatSession.renew_httpsession()
-# #             outcome=get_nifti_using_xnat(sessionId, scanId)
-# #             if outcome==False:
-# #                 print("NO DICOM FILE %s:%s:%s:%s" % (sessionId, scanId))
-# #             xnatSession.close_httpsession()
-# #             try :
-# #                 copy_nifti()
-# #             except:
-# #                 continue
+    parser = argparse.ArgumentParser()
+    parser.add_argument('stuff', nargs='+')
+    args = parser.parse_args()
+    name_of_the_function=args.stuff[0]
+    return_value=0
+    if name_of_the_function == "call_check_if_a_file_exist_in_snipr":
+        return_value=call_check_if_a_file_exist_in_snipr(args)
+        print(return_value)
+        return
+    print(return_value)
+if __name__ == '__main__':
+    main()
