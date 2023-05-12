@@ -133,21 +133,21 @@ niftifile_csvfilename=${working_dir}/'this_session_final_ct.csv'
 
 ########################################
 get_nifti_scan_uri ${sessionID}  ${working_dir} ${niftifile_csvfilename}
-########################################
-outputfiles_present=0
-while IFS=',' read -ra array; do
-scanID=${array[2]}
-echo sessionId::${sessionID}
-echo scanId::${scanID}
-resource_foldername="PREPROCESS_SEGM"
-### check if the file exists:
-call_check_if_a_file_exist_in_snipr_arguments=('call_check_if_a_file_exist_in_snipr' ${sessionID}  ${scanID}  ${resource_foldername} _resaved.nii.gz _normalized.nii.gz _levelset.nii.gz _levelset_bet.nii.gz _4DL_seg.nii.gz)
-outputfiles_present=$(python3 download_with_session_ID.py "${call_check_if_a_file_exist_in_snipr_arguments[@]}" )
-done < <( tail -n +2 "${niftifile_csvfilename}" )
-################################################
-echo "outputfiles_present::${outputfiles_present}:::ATUL"
-echo "   ATUL "
-if [[ $outputfiles_present -eq 0 ]] ; then
+#########################################
+#outputfiles_present=0
+#while IFS=',' read -ra array; do
+#scanID=${array[2]}
+#echo sessionId::${sessionID}
+#echo scanId::${scanID}
+#resource_foldername="PREPROCESS_SEGM"
+#### check if the file exists:
+#call_check_if_a_file_exist_in_snipr_arguments=('call_check_if_a_file_exist_in_snipr' ${sessionID}  ${scanID}  ${resource_foldername} _resaved.nii.gz _normalized.nii.gz _levelset.nii.gz _levelset_bet.nii.gz _4DL_seg.nii.gz)
+#outputfiles_present=$(python3 download_with_session_ID.py "${call_check_if_a_file_exist_in_snipr_arguments[@]}" )
+#done < <( tail -n +2 "${niftifile_csvfilename}" )
+#################################################
+#echo "outputfiles_present::${outputfiles_present}:::ATUL"
+#echo "   ATUL "
+#if [[ $outputfiles_present -eq 0 ]] ; then
 copy_scan_data ${niftifile_csvfilename} ${working_dir}
 working_dir=/workinginput
 output_directory=/workingoutput
@@ -183,7 +183,7 @@ echo " FILES NOT PRESENT I AM WORKING ON IT"
 else
   echo " FILES ARE PRESENT "
 ######################################################################################################################
-fi
+#fi
 
 
 
