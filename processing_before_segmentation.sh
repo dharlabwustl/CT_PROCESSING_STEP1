@@ -133,81 +133,81 @@ niftifile_csvfilename=${working_dir}/'this_session_final_ct.csv'
 
 ########################################
 get_nifti_scan_uri ${sessionID}  ${working_dir} ${niftifile_csvfilename}
-#########################################
-#outputfiles_present=0
+##########################################
+##outputfiles_present=0
+##while IFS=',' read -ra array; do
+##scanID=${array[2]}
+##echo sessionId::${sessionID}
+##echo scanId::${scanID}
+##resource_foldername="PREPROCESS_SEGM"
+##### check if the file exists:
+##call_check_if_a_file_exist_in_snipr_arguments=('call_check_if_a_file_exist_in_snipr' ${sessionID}  ${scanID}  ${resource_foldername} _resaved.nii.gz _normalized.nii.gz _levelset.nii.gz _levelset_bet.nii.gz _4DL_seg.nii.gz)
+##outputfiles_present=$(python3 download_with_session_ID.py "${call_check_if_a_file_exist_in_snipr_arguments[@]}" )
+##done < <( tail -n +2 "${niftifile_csvfilename}" )
+##################################################
+##echo "outputfiles_present::${outputfiles_present}:::ATUL"
+##echo "   ATUL "
+##if [[ $outputfiles_present -eq 0 ]] ; then
+#copy_scan_data ${niftifile_csvfilename} ${working_dir}
+#working_dir=/workinginput
+#output_directory=/workingoutput
+#
+#final_output_directory=/outputinsidedocker
+#/software/Stroke_CT_Processing/stroke_ct_processing_1.sh ${working_dir} ${output_directory}
+#/software/Stroke_CT_Processing/step4_bet.sh ${output_directory}
+#/software/Stroke_CT_Processing/stroke_ct_processing_2.sh ${output_directory} ${output_directory}
+#
+#######################################################################################################################
+#
+#for file in ${output_directory}/*
+#do
+#  cp $file ${final_output_directory}/
+#done
+#######################################################################################################################
+#
+#######################################################################################################################
+### COPY IT TO THE SNIPR RESPECTIVE SCAN RESOURCES
 #while IFS=',' read -ra array; do
 #scanID=${array[2]}
 #echo sessionId::${sessionID}
 #echo scanId::${scanID}
-#resource_foldername="PREPROCESS_SEGM"
-#### check if the file exists:
-#call_check_if_a_file_exist_in_snipr_arguments=('call_check_if_a_file_exist_in_snipr' ${sessionID}  ${scanID}  ${resource_foldername} _resaved.nii.gz _normalized.nii.gz _levelset.nii.gz _levelset_bet.nii.gz _4DL_seg.nii.gz)
-#outputfiles_present=$(python3 download_with_session_ID.py "${call_check_if_a_file_exist_in_snipr_arguments[@]}" )
 #done < <( tail -n +2 "${niftifile_csvfilename}" )
-#################################################
-#echo "outputfiles_present::${outputfiles_present}:::ATUL"
-#echo "   ATUL "
-#if [[ $outputfiles_present -eq 0 ]] ; then
-copy_scan_data ${niftifile_csvfilename} ${working_dir}
-working_dir=/workinginput
-output_directory=/workingoutput
-
-final_output_directory=/outputinsidedocker
-/software/Stroke_CT_Processing/stroke_ct_processing_1.sh ${working_dir} ${output_directory}
-/software/Stroke_CT_Processing/step4_bet.sh ${output_directory}
-/software/Stroke_CT_Processing/stroke_ct_processing_2.sh ${output_directory} ${output_directory}
-
-######################################################################################################################
-
-for file in ${output_directory}/*
-do
-  cp $file ${final_output_directory}/
-done
-######################################################################################################################
-
-######################################################################################################################
-## COPY IT TO THE SNIPR RESPECTIVE SCAN RESOURCES
-while IFS=',' read -ra array; do
-scanID=${array[2]}
-echo sessionId::${sessionID}
-echo scanId::${scanID}
-done < <( tail -n +2 "${niftifile_csvfilename}" )
-snipr_output_foldername="PREPROCESS_SEGM"
-file_suffixes=(  .nii.gz .nii .txt ) #sys.argv[5]
-for file_suffix in ${file_suffixes[@]}
-do
-    echo "COPYING FILES TO ${snipr_output_foldername} "
-    copyoutput_to_snipr  ${sessionID} ${scanID} "${final_output_directory}"  ${snipr_output_foldername}  ${file_suffix}
-done
-echo " FILES NOT PRESENT I AM WORKING ON IT"
-else
-  echo " FILES ARE PRESENT "
-######################################################################################################################
-#fi
-
-
-
-################################################################################################################
-#
-### GET THE RESPECTIVS MASKS NIFTI FILE NAME AND COPY IT TO THE WORKING_DIR
-#
-######################################################################################
-#resource_dirname='MASKS'
-#output_dirname=${working_dir}
-
-#echo working_dir::${working_dir}
-#echo output_dirname::${output_dirname}
-#copy_masks_data   ${sessionID}  ${scanID} ${resource_dirname} ${output_dirname}
-#######################################################################################################################
-### CALCULATE EDEMA BIOMARKERS
-#nwucalculation_each_scan
-#######################################################################################################################
-### COPY IT TO THE SNIPR RESPECTIVE SCAN RESOURCES
-#snipr_output_foldername="EDEMA_BIOMARKER"
-#file_suffixes=(  .pdf .mat .csv ) #sys.argv[5]
+#snipr_output_foldername="PREPROCESS_SEGM"
+#file_suffixes=(  .nii.gz .nii .txt ) #sys.argv[5]
 #for file_suffix in ${file_suffixes[@]}
 #do
+#    echo "COPYING FILES TO ${snipr_output_foldername} "
 #    copyoutput_to_snipr  ${sessionID} ${scanID} "${final_output_directory}"  ${snipr_output_foldername}  ${file_suffix}
 #done
+#echo " FILES NOT PRESENT I AM WORKING ON IT"
+#else
+#  echo " FILES ARE PRESENT "
 #######################################################################################################################
-
+##fi
+#
+#
+#
+#################################################################################################################
+##
+#### GET THE RESPECTIVS MASKS NIFTI FILE NAME AND COPY IT TO THE WORKING_DIR
+##
+#######################################################################################
+##resource_dirname='MASKS'
+##output_dirname=${working_dir}
+#
+##echo working_dir::${working_dir}
+##echo output_dirname::${output_dirname}
+##copy_masks_data   ${sessionID}  ${scanID} ${resource_dirname} ${output_dirname}
+########################################################################################################################
+#### CALCULATE EDEMA BIOMARKERS
+##nwucalculation_each_scan
+########################################################################################################################
+#### COPY IT TO THE SNIPR RESPECTIVE SCAN RESOURCES
+##snipr_output_foldername="EDEMA_BIOMARKER"
+##file_suffixes=(  .pdf .mat .csv ) #sys.argv[5]
+##for file_suffix in ${file_suffixes[@]}
+##do
+##    copyoutput_to_snipr  ${sessionID} ${scanID} "${final_output_directory}"  ${snipr_output_foldername}  ${file_suffix}
+##done
+########################################################################################################################
+#
