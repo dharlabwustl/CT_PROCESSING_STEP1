@@ -697,7 +697,7 @@ def check_if_a_file_exist_in_snipr(URI, resource_dir,extension_to_find_list):
     df_scan = pd.read_json(json.dumps(metadata_masks))
     for extension_to_find in extension_to_find_list:
         for x in range(df_scan.shape[0]):
-            print(df_scan.loc[x,'Name'])
+            # print(df_scan.loc[x,'Name'])
             if extension_to_find in df_scan.loc[x,'Name']:
                 num_files_present=num_files_present+1
     return num_files_present
