@@ -147,6 +147,9 @@ done < <( tail -n +2 "${niftifile_csvfilename}" )
 ################################################
 echo "outputfiles_present::${outputfiles_present}::outputfiles_present"
 echo "outputfiles_present::ATUL${outputfiles_present}::outputfiles_present"
+if [[ $outputfiles_present -eq 1 ]] ; then
+  echo " I AM THE ONE"
+fi
 #if [[ $outputfiles_present -eq 0 ]] ; then
 #
 #  echo "outputfiles_present::${outputfiles_present}::outputfiles_present"
