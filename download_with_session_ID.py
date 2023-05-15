@@ -724,8 +724,8 @@ def main():
     return_value=0
     if name_of_the_function == "call_check_if_a_file_exist_in_snipr":
         return_value=call_check_if_a_file_exist_in_snipr(args)
-        print(return_value)
-        return
+        # print(return_value)
+        # return
     print(return_value)
 if __name__ == '__main__':
     main()
