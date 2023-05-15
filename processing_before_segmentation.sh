@@ -145,6 +145,7 @@ call_check_if_a_file_exist_in_snipr_arguments=('call_check_if_a_file_exist_in_sn
 outputfiles_present=$(python3 download_with_session_ID.py "${call_check_if_a_file_exist_in_snipr_arguments[@]}" )
 done < <( tail -n +2 "${niftifile_csvfilename}" )
 ################################################
+echo "outputfiles_present::${outputfiles_present}::outputfiles_present"
 if [[ $outputfiles_present -eq 0 ]] ; then
 copy_scan_data ${niftifile_csvfilename} ${working_dir}
 working_dir=/workinginput
