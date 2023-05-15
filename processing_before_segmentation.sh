@@ -150,69 +150,69 @@ echo "outputfiles_present:: "${outputfiles_present: -1}"::outputfiles_present"
 if [[  "${outputfiles_present: -1}" -eq 1 ]] ; then
   echo " I AM THE ONE"
 fi
-#if [[ $outputfiles_present -eq 0 ]] ; then
+if [[  "${outputfiles_present: -1}" -eq 0 ]] ; then
+
+echo "outputfiles_present:: "${outputfiles_present: -1}"::outputfiles_present"
+#copy_scan_data ${niftifile_csvfilename} ${working_dir}
+#working_dir=/workinginput
+#output_directory=/workingoutput
 #
-#  echo "outputfiles_present::${outputfiles_present}::outputfiles_present"
-##copy_scan_data ${niftifile_csvfilename} ${working_dir}
-##working_dir=/workinginput
-##output_directory=/workingoutput
-##
-##final_output_directory=/outputinsidedocker
-##/software/Stroke_CT_Processing/stroke_ct_processing_1.sh ${working_dir} ${output_directory}
-##/software/Stroke_CT_Processing/step4_bet.sh ${output_directory}
-##/software/Stroke_CT_Processing/stroke_ct_processing_2.sh ${output_directory} ${output_directory}
-##
-########################################################################################################################
-##
-##for file in ${output_directory}/*
-##do
-##  cp $file ${final_output_directory}/
-##done
-########################################################################################################################
-##
-########################################################################################################################
-#### COPY IT TO THE SNIPR RESPECTIVE SCAN RESOURCES
-##while IFS=',' read -ra array; do
-##scanID=${array[2]}
-##echo sessionId::${sessionID}
-##echo scanId::${scanID}
-##done < <( tail -n +2 "${niftifile_csvfilename}" )
-##snipr_output_foldername="PREPROCESS_SEGM"
-##file_suffixes=(  .nii.gz .nii .txt ) #sys.argv[5]
-##for file_suffix in ${file_suffixes[@]}
-##do
-##    echo "COPYING FILES TO ${snipr_output_foldername} "
-##    copyoutput_to_snipr  ${sessionID} ${scanID} "${final_output_directory}"  ${snipr_output_foldername}  ${file_suffix}
-##done
-##echo " FILES NOT PRESENT I AM WORKING ON IT"
-##else
-##  echo " FILES ARE PRESENT "
+#final_output_directory=/outputinsidedocker
+#/software/Stroke_CT_Processing/stroke_ct_processing_1.sh ${working_dir} ${output_directory}
+#/software/Stroke_CT_Processing/step4_bet.sh ${output_directory}
+#/software/Stroke_CT_Processing/stroke_ct_processing_2.sh ${output_directory} ${output_directory}
+#
 #######################################################################################################################
-#fi
 #
+#for file in ${output_directory}/*
+#do
+#  cp $file ${final_output_directory}/
+#done
+#######################################################################################################################
 #
+#######################################################################################################################
+### COPY IT TO THE SNIPR RESPECTIVE SCAN RESOURCES
+#while IFS=',' read -ra array; do
+#scanID=${array[2]}
+#echo sessionId::${sessionID}
+#echo scanId::${scanID}
+#done < <( tail -n +2 "${niftifile_csvfilename}" )
+#snipr_output_foldername="PREPROCESS_SEGM"
+#file_suffixes=(  .nii.gz .nii .txt ) #sys.argv[5]
+#for file_suffix in ${file_suffixes[@]}
+#do
+#    echo "COPYING FILES TO ${snipr_output_foldername} "
+#    copyoutput_to_snipr  ${sessionID} ${scanID} "${final_output_directory}"  ${snipr_output_foldername}  ${file_suffix}
+#done
+#echo " FILES NOT PRESENT I AM WORKING ON IT"
+#else
+#  echo " FILES ARE PRESENT "
+######################################################################################################################
+fi
+
+
+
+################################################################################################################
 #
-#################################################################################################################
-##
-#### GET THE RESPECTIVS MASKS NIFTI FILE NAME AND COPY IT TO THE WORKING_DIR
-##
-#######################################################################################
-##resource_dirname='MASKS'
-##output_dirname=${working_dir}
+### GET THE RESPECTIVS MASKS NIFTI FILE NAME AND COPY IT TO THE WORKING_DIR
 #
-##echo working_dir::${working_dir}
-##echo output_dirname::${output_dirname}
-##copy_masks_data   ${sessionID}  ${scanID} ${resource_dirname} ${output_dirname}
-########################################################################################################################
-#### CALCULATE EDEMA BIOMARKERS
-##nwucalculation_each_scan
-########################################################################################################################
-#### COPY IT TO THE SNIPR RESPECTIVE SCAN RESOURCES
-##snipr_output_foldername="EDEMA_BIOMARKER"
-##file_suffixes=(  .pdf .mat .csv ) #sys.argv[5]
-##for file_suffix in ${file_suffixes[@]}
-##do
-##    copyoutput_to_snipr  ${sessionID} ${scanID} "${final_output_directory}"  ${snipr_output_foldername}  ${file_suffix}
-##done
-########################################################################################################################
-#
+######################################################################################
+#resource_dirname='MASKS'
+#output_dirname=${working_dir}
+
+#echo working_dir::${working_dir}
+#echo output_dirname::${output_dirname}
+#copy_masks_data   ${sessionID}  ${scanID} ${resource_dirname} ${output_dirname}
+#######################################################################################################################
+### CALCULATE EDEMA BIOMARKERS
+#nwucalculation_each_scan
+#######################################################################################################################
+### COPY IT TO THE SNIPR RESPECTIVE SCAN RESOURCES
+#snipr_output_foldername="EDEMA_BIOMARKER"
+#file_suffixes=(  .pdf .mat .csv ) #sys.argv[5]
+#for file_suffix in ${file_suffixes[@]}
+#do
+#    copyoutput_to_snipr  ${sessionID} ${scanID} "${final_output_directory}"  ${snipr_output_foldername}  ${file_suffix}
+#done
+#######################################################################################################################
+
