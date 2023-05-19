@@ -144,9 +144,16 @@ downloadallfiletolocaldir()" ${sessionID}  ${scanID}  ${resource_dirname}  ${out
 
 #########################################################################
 ## GET THE SINGLE CT NIFTI FILE NAME AND COPY IT TO THE WORKING_DIR
-niftifile_csvfilename=${working_dir}/'this_session_final_ct.csv'
-get_nifti_scan_uri ${sessionID}  ${working_dir} ${niftifile_csvfilename}
+#niftifile_csvfilename=${working_dir}/'this_session_final_ct.csv'
+#get_nifti_scan_uri ${sessionID}  ${working_dir} ${niftifile_csvfilename}
 ########################################
+call_download_files_in_a_resource_in_a_session_arguments=('call_download_files_in_a_resource_in_a_session' ${sessionID} "NIFTI_LOCATION" ${working_dir})
+outputfiles_present=$(python3 download_with_session_ID.py "${call_download_files_in_a_resource_in_a_session_arguments[@]}")
+echo '$outputfiles_present'::$outputfiles_present
+########################################
+for niftifile_csvfilename in ${working_dir}/*NIFTILOCATION.csv; do
+#  outputfiles_present=0
+  echo $niftifile_csvfilename
 outputfiles_present=0
 while IFS=',' read -ra array; do
 scanID=${array[2]}
@@ -221,7 +228,7 @@ else
   echo " FILES ARE PRESENT "
 ######################################################################################################################
 fi
-
+done
 ######################################################################################################################
 
 
