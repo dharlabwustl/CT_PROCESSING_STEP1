@@ -715,6 +715,34 @@ def call_check_if_a_file_exist_in_snipr( args):
     if file_present < len(extension_to_find_list):
         return 0
     return 1
+def download_files_in_a_resource(URI,dir_to_save):
+    try:
+        df_listfile=listoffile_witha_URI_as_df(URI)
+        print("df_listfile::{}".format(df_listfile))
+        # download_a_singlefile_with_URLROW(df_listfile,dir_to_save)
+        for item_id, row in df_listfile.iterrows():
+            # print("row::{}".format(row))
+            # download_a_singlefile_with_URLROW(row,dir_to_save)
+            download_a_singlefile_with_URIString(row['URI'],row['Name'],dir_to_save)
+            print("DOWNLOADED ::{}".format(row))
+    except:
+        print("FAILED AT ::{}".format("download_files_in_a_resource"))
+        pass
+def call_download_files_in_a_resource_in_a_session(args):
+    sessionId=args.stuff[1]
+    # scanId=args.stuff[2]
+    resource_dirname=args.stuff[2]
+    dir_to_save=args.stuff[3]
+    URI = (("/data/experiments/%s/resources/" + resource_dirname+ "/files?format=json")  %
+           (sessionId))
+
+    try:
+        download_files_in_a_resource(URI,dir_to_save)
+        print("I AM IN :: call_download_files_in_a_resource_in_a_session::URI::{}".format(URI))
+        return 1
+    except:
+        return 0
+
 def main():
 
     parser = argparse.ArgumentParser()
