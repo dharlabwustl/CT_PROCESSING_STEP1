@@ -715,6 +715,35 @@ def call_check_if_a_file_exist_in_snipr( args):
     if file_present < len(extension_to_find_list):
         return 0
     return 1
+def listoffile_witha_URI_as_df(URI):
+    xnatSession = XnatSession(username=XNAT_USER, password=XNAT_PASS, host=XNAT_HOST)
+    xnatSession.renew_httpsession()
+    # print("I AM IN :: listoffile_witha_URI_as_df::URI::{}".format(URI))
+    response = xnatSession.httpsess.get(xnatSession.host + URI)
+    # print("I AM IN :: listoffile_witha_URI_as_df::URI::{}".format(URI))
+    num_files_present=0
+    df_scan=[]
+    if response.status_code != 200:
+        xnatSession.close_httpsession()
+        return num_files_present
+    metadata_masks=response.json()['ResultSet']['Result']
+    df_listfile = pd.read_json(json.dumps(metadata_masks))
+    xnatSession.close_httpsession()
+    return df_listfile
+def download_a_singlefile_with_URIString(url,filename,dir_to_save):
+    xnatSession = XnatSession(username=XNAT_USER, password=XNAT_PASS, host=XNAT_HOST)
+    xnatSession.renew_httpsession()
+    # command="echo  " + url['URI'] + " >> " +  os.path.join(dir_to_save,"test.csv")
+    # subprocess.call(command,shell=True)
+    response = xnatSession.httpsess.get(xnatSession.host +url) #/data/projects/ICH/resources/179772/files/ICH_CTSESSIONS_202305170753.csv") #
+    #                                                       # "/data/experiments/SNIPR02_E03548/scans/1-CT1/resources/147851/files/ICH_0001_01022017_0414_1-CT1_threshold-1024.0_22121.0TOTAL_VersionDate-11302022_04_22_2023.csv") ## url['URI'])
+    zipfilename=os.path.join(dir_to_save,filename ) #"/data/projects/ICH/resources/179772/files/ICH_CTSESSIONS_202305170753.csv")) #sessionId+scanId+'.zip'
+    with open(zipfilename, "wb") as f:
+        for chunk in response.iter_content(chunk_size=512):
+            if chunk:  # filter out keep-alive new chunks
+                f.write(chunk)
+    xnatSession.close_httpsession()
+    return zipfilename
 def download_files_in_a_resource(URI,dir_to_save):
     try:
         df_listfile=listoffile_witha_URI_as_df(URI)
