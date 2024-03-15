@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33d5bb5b-874e-4616-882d-a7f4f094f636" name="Changes" comment="commit day 3">
-      <change beforePath="$PROJECT_DIR$/processing_after_segmentation_csfmaskonly.sh" beforeDir="false" afterPath="$PROJECT_DIR$/processing_after_segmentation_csfmaskonly.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/download_with_session_ID.py" beforeDir="false" afterPath="$PROJECT_DIR$/download_with_session_ID.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
