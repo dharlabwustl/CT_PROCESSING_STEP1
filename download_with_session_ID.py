@@ -833,9 +833,11 @@ def fill_redcap_for_selected_scan(args):
     try:
 
         # session_id=args.stuff[1]
-        # subprocess.call("echo " + "I zai zeli AT ::{}  >> /workingoutput/error.txt".format(session_id) ,shell=True )
         xmlfile=args.stuff[1]
         csv_file_df=pd.read_csv(args.stuff[2])
+        subprocess.call("echo " + "I zai zeli AT ::{}  >> /workingoutput/error.txt".format(xmlfile) ,shell=True )
+        subprocess.call("echo " + "I zai zeli AT ::{}  >> /workingoutput/error.txt".format(args.stuff[2]) ,shell=True )
+
         project_name,subject_name, session_label,acquisition_site_xml,acquisition_datetime_xml,scanner_from_xml,body_part_xml,kvp_xml=get_info_from_xml(xmlfile)
         this_project_redcapfile_latest=project_name+'_latest.csv'
         api_token='EC6A2206FF8C1D87D4035E61C99290FF'
