@@ -22,3 +22,8 @@ if [[ ${TYPE_OF_PROGRAM} == 4 ]] ;
 then
     /software/processing_after_segmentation_csfmaskonly.sh $SESSION_ID $XNAT_USER $XNAT_PASS $XNAT_HOST ##/input /output
 fi
+
+if [[ ${TYPE_OF_PROGRAM} == 'PREPROCESSING' ]] ;
+then
+    /software/processing_before_segmentation_03_15_2023.sh $SESSION_ID $XNAT_USER $XNAT_PASS $XNAT_HOST ##/input /output
+fi
