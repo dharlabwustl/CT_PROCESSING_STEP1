@@ -48,20 +48,6 @@
       <option name="presentableId" value="Default" />
       <updated>1671557538749</updated>
     </task>
-    <task id="LOCAL-00065" summary="commit day 3">
-      <created>1673036412573</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1673036412573</updated>
-    </task>
-    <task id="LOCAL-00066" summary="commit day 3">
-      <created>1673037584711</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1673037584711</updated>
-    </task>
     <task id="LOCAL-00067" summary="commit day 3">
       <created>1673457393088</created>
       <option name="number" value="00067" />
@@ -391,7 +377,21 @@
       <option name="project" value="LOCAL" />
       <updated>1710788074201</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="commit day 3">
+      <created>1710788414643</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1710788414643</updated>
+    </task>
+    <task id="LOCAL-00117" summary="commit day 3">
+      <created>1710788540918</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1710788540918</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

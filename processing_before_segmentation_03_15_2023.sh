@@ -140,10 +140,10 @@ for niftifile_csvfilename in ${working_dir}/*NIFTILOCATION.csv; do
   ################################################
   echo "outputfiles_present:: "${outputfiles_present: -1}"::outputfiles_present"
   #echo "outputfiles_present::ATUL${outputfiles_present}::outputfiles_present"
-  if [[ "${outputfiles_present: -1}" -eq 100 ]]; then
+  if [[ "${outputfiles_present: -1}" -eq 1 ]]; then
     echo " I AM THE ONE"
   fi
-  if [[ "${outputfiles_present: -1}" -eq 0 ]]; then
+  if [[ "${outputfiles_present: -1}" -eq 1 ]]; then
 
     echo "outputfiles_present:: "${outputfiles_present: -1}"::outputfiles_present"
     copy_scan_data ${niftifile_csvfilename} ${working_dir}
