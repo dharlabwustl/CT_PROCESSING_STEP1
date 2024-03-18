@@ -835,8 +835,6 @@ def fill_redcap_for_selected_scan(args):
         # session_id=args.stuff[1]
         xmlfile=args.stuff[1]
         csv_file_df=pd.read_csv(args.stuff[2])
-        subprocess.call("echo " + "I zai zeli AT ::{}  >> /workingoutput/error.txt".format(xmlfile) ,shell=True )
-        subprocess.call("echo " + "I zai zeli AT ::{}  >> /workingoutput/error.txt".format(args.stuff[2]) ,shell=True )
 
         project_name,subject_name, session_label,acquisition_site_xml,acquisition_datetime_xml,scanner_from_xml,body_part_xml,kvp_xml=get_info_from_xml(xmlfile)
         this_project_redcapfile_latest=project_name+'_latest.csv'
@@ -849,6 +847,9 @@ def fill_redcap_for_selected_scan(args):
             for each_colname in csv_file_df.columns:
                 # print(each_colname)
                 # print(csv_file_df[each_colname])
+                subprocess.call("echo " + "I zai zeli AT ::{}  >> /workingoutput/error.txt".format(xmlfile) ,shell=True )
+                subprocess.call("echo " + "I zai zeli AT ::{}  >> /workingoutput/error.txt".format(args.stuff[2]) ,shell=True )
+
                 subprocess.call("echo " + "I PASSED AT subject_name::{}  >> /workingoutput/error.txt".format(subject_name) ,shell=True )
                 subprocess.call("echo " + "I PASSED AT this_session_redcap_repeat_instance::{}  >> /workingoutput/error.txt".format(this_session_redcap_repeat_instance) ,shell=True )
                 subprocess.call("echo " + "I PASSED AT session_label::{}  >> /workingoutput/error.txt".format(session_label) ,shell=True )
