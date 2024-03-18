@@ -3713,6 +3713,8 @@ def csvfile_preprocessing_for_redcap(args):
         all_files_present=preprocessing_filename_csv_df.at[0,'all_files_present_flag']
 
         pre_processing_complete=0
+        if all_files_present>0:
+            pre_processing_complete=1
 
         row_values=[all_files_present,pre_processing_complete] #body_site,scan_date_time,scan_selected,scan_stem,scan_name,scan_kernel,kvp,scanner_name,px,pz,slices,scan_selection_complete]
         columnames=['preprocess_files_present','pre_processing_complete'] #,'scan_selected','scan_stem','scan_name','scan_kernel','kvp','scanner_name','px','pz','slices','scan_selection_complete']
