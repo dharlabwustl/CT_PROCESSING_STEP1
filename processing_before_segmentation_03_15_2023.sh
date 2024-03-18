@@ -143,7 +143,7 @@ for niftifile_csvfilename in ${working_dir}/*NIFTILOCATION.csv; do
   if [[ "${outputfiles_present: -1}" -eq 1 ]]; then
     echo " I AM THE ONE"
   fi
-  if [[ "${outputfiles_present: -1}" -eq 1 ]]; then
+  if [[ "${outputfiles_present: -1}" -eq 0 ]]; then
     echo " I AM THE SECOND"
     echo "outputfiles_present:: "${outputfiles_present: -1}"::outputfiles_present"
     copy_scan_data ${niftifile_csvfilename} ${working_dir}
@@ -151,9 +151,9 @@ for niftifile_csvfilename in ${working_dir}/*NIFTILOCATION.csv; do
     output_directory=/workingoutput
 
     final_output_directory=/outputinsidedocker
-    #    /software/Stroke_CT_Processing/stroke_ct_processing_1.sh ${working_dir} ${output_directory}
-    #    /software/Stroke_CT_Processing/step4_bet.sh ${output_directory}
-    #    /software/Stroke_CT_Processing/stroke_ct_processing_2.sh ${output_directory} ${output_directory}
+        /software/Stroke_CT_Processing/stroke_ct_processing_1.sh ${working_dir} ${output_directory}
+        /software/Stroke_CT_Processing/step4_bet.sh ${output_directory}
+        /software/Stroke_CT_Processing/stroke_ct_processing_2.sh ${output_directory} ${output_directory}
 
     ######################################################################################################################
 
