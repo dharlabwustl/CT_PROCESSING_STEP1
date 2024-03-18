@@ -11,6 +11,7 @@ import argparse
 # import pydicom as dicom
 import pathlib,xmltodict
 from xnatSession import XnatSession
+from redcapapi_functions import *
 catalogXmlRegex = re.compile(r'.*\.xml$')
 XNAT_HOST_URL='https://snipr.wustl.edu'
 XNAT_HOST = XNAT_HOST_URL # os.environ['XNAT_HOST']  #
