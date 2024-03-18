@@ -12,7 +12,7 @@ import datetime
 import argparse
 # import SimpleITK as sitk
 # sys.path.append('/media/atul/WDJan2022/WASHU_WORKS/PROJECTS/DOCKERIZE/NWU/PYCHARM/EDEMA_MARKERS_PROD');
-from utilities_simple import *
+# from utilities_simple import *
 from download_with_session_ID import *
 
 def get_latest_csvfile_singlefilename(df1,extens='.csv'):
