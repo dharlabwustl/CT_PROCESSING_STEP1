@@ -211,7 +211,7 @@ for niftifile_csvfilename in ${working_dir}/*NIFTILOCATION.csv; do
         ##############################################################
 
         this_csvfilename='/workinginput/all_files_present_flag_df.csv'
-        call_check_if_a_file_exist_in_snipr_arguments=('call_check_if_a_file_exist_in_snipr' ${sessionID} ${scanID} ${resource_foldername} _resaved.nii.gz _normalized.nii.gz _levelset.nii.gz _levelset_bet.nii.gz _4DL_seg.nii.gz)
+        call_check_if_a_file_exist_in_snipr_arguments=('call_check_if_a_file_exist_in_snipr' ${sessionID} ${scanID} ${snipr_output_foldername} _resaved_levelset.nii.gz _resaved_csf_unet.nii.gz _resaved_infarct_auto.nii.gz _resaved_infarct_auto_removesmall.nii.gz _resaved_levelset_bet.nii.gz)
         outputfiles_present=$(python3 download_with_session_ID.py "${call_check_if_a_file_exist_in_snipr_arguments[@]}")
         csvfile_for_redcap='/workinginput/csvfile_for_redcap_postprocessing.csv'
         csvfile_scan_selection_for_redcap_call=('csvfile_postprocessing_for_redcap' ${this_csvfilename} ${csvfile_for_redcap}) # 'Name' scan_name)
