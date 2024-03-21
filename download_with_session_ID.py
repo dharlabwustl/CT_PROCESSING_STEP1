@@ -832,11 +832,9 @@ def download_an_xmlfile_with_URIString(args): #url,filename,dir_to_save):
 
 def fill_redcap_for_selected_scan(args):
     try:
-
         # session_id=args.stuff[1]
         xmlfile=args.stuff[1]
         csv_file_df=pd.read_csv(args.stuff[2])
-
         project_name,subject_name, session_label,acquisition_site_xml,acquisition_datetime_xml,scanner_from_xml,body_part_xml,kvp_xml=get_info_from_xml(xmlfile)
         this_project_redcapfile_latest=project_name+'_latest.csv'
         api_token='EC6A2206FF8C1D87D4035E61C99290FF'
@@ -846,11 +844,8 @@ def fill_redcap_for_selected_scan(args):
         imaging_data_complete=str(this_session_redcap_repeat_instance_df['imaging_data_complete'].item())
         if imaging_data_complete=='0':
             for each_colname in csv_file_df.columns:
-                # print(each_colname)
-                # print(csv_file_df[each_colname])
                 subprocess.call("echo " + "I zai zeli AT ::{}  >> /workingoutput/error.txt".format(xmlfile) ,shell=True )
                 subprocess.call("echo " + "I zai zeli AT ::{}  >> /workingoutput/error.txt".format(args.stuff[2]) ,shell=True )
-
                 subprocess.call("echo " + "I PASSED AT subject_name::{}  >> /workingoutput/error.txt".format(subject_name) ,shell=True )
                 subprocess.call("echo " + "I PASSED AT this_session_redcap_repeat_instance::{}  >> /workingoutput/error.txt".format(this_session_redcap_repeat_instance) ,shell=True )
                 subprocess.call("echo " + "I PASSED AT session_label::{}  >> /workingoutput/error.txt".format(session_label) ,shell=True )
@@ -860,19 +855,6 @@ def fill_redcap_for_selected_scan(args):
                     add_one_data_to_redcap(subject_name,'imaging_data',this_session_redcap_repeat_instance,str(each_colname),csv_file_df[each_colname].item())
                 except:
                     pass
-        #fill scan base
-        ## fill scan complete name
-        ## fill number of slices,kvp,px,pz, scanner detail
-
-        # subprocess.call("echo " + "I PASSED AT project_name::{}  >> /workingoutput/error.txt".format(project_name) ,shell=True )
-        # subprocess.call("echo " + "I PASSED AT subject_name::{}  >> /workingoutput/error.txt".format(subject_name) ,shell=True )
-        # subprocess.call("echo " + "I PASSED AT session_label::{}  >> /workingoutput/error.txt".format(session_label) ,shell=True )
-        # subprocess.call("echo " + "I PASSED AT acquisition_site_xml::{}  >> /workingoutput/error.txt".format(acquisition_site_xml) ,shell=True )
-        # subprocess.call("echo " + "I PASSED AT ::{}  >> /workingoutput/error.txt".format(inspect.stack()[0][3]) ,shell=True )
-        # subprocess.call("echo " + "I PASSED AT acquisition_datetime_xml::{}  >> /workingoutput/error.txt".format(acquisition_datetime_xml) ,shell=True )
-        # subprocess.call("echo " + "I PASSED AT scanner_from_xml::{}  >> /workingoutput/error.txt".format(scanner_from_xml) ,shell=True )
-        # subprocess.call("echo " + "I PASSED AT body_part_xml::{}  >> /workingoutput/error.txt".format(body_part_xml) ,shell=True )
-        # subprocess.call("echo " + "I PASSED AT kvp_xml::{}  >> /workingoutput/error.txt".format(kvp_xml) ,shell=True )
     except:
         subprocess.call("echo " + "I FAILED AT ::{}  >> /workingoutput/error.txt".format(inspect.stack()[0][3]) ,shell=True )
         pass
