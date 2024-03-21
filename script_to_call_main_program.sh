@@ -27,3 +27,7 @@ if [[ ${TYPE_OF_PROGRAM} == 'PREPROCESSING' ]] ;
 then
     /software/processing_before_segmentation_03_15_2023.sh $SESSION_ID $XNAT_USER $XNAT_PASS $XNAT_HOST ##/input /output
 fi
+if [[ ${TYPE_OF_PROGRAM} == 'POSTPROCESSING' ]] ;
+then
+    /software/processing_after_segmentation_03_21_2023.sh $SESSION_ID $XNAT_USER $XNAT_PASS $XNAT_HOST ##/input /output
+fi
