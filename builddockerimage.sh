@@ -9,7 +9,7 @@ do
 done
 echo $command
 #python /media/atul/WDJan2022/WASHU_WORKS/PROJECTS/FROM_DOCUMENTS/docker-images/
-python /media/atul/WDJan20221/WASHU_WORKS/PROJECTS/FROM_DOCUMENTS/docker-images/command2label.py  $command  >> ${parent_dir}/Dockerfile
+python /media/atul/WDJan20221/WASHU_WORKS/PROJECTS/FROM_DOCUMENTS/docker-images/command2label.py $command  >> ${parent_dir}/Dockerfile
 # imagename=$1
 imagename=${2} #'processingforsegm' ##yashengstep1'
 #fsl502py369withpacksnltx
