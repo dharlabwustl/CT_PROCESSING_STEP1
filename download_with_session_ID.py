@@ -701,6 +701,7 @@ def check_if_a_file_exist_in_snipr(URI, resource_dir,extension_to_find_list):
             # print(df_scan.loc[x,'Name'])
             if extension_to_find in df_scan.loc[x,'Name']:
                 num_files_present=num_files_present+1
+                break
     return num_files_present
 def call_check_if_a_file_exist_in_snipr( args):
     # parser = argparse.ArgumentParser()
