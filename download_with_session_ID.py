@@ -16,7 +16,8 @@ catalogXmlRegex = re.compile(r'.*\.xml$')
 XNAT_HOST_URL='https://snipr.wustl.edu'
 XNAT_HOST = XNAT_HOST_URL # os.environ['XNAT_HOST']  #
 XNAT_USER = os.environ['XNAT_USER']#
-XNAT_PASS =os.environ['XNAT_PASS'] # 
+XNAT_PASS =os.environ['XNAT_PASS'] #
+api_token=os.environ['REDCAP_API']
 def combinecsvs(inputdirectory,outputdirectory,outputfilename,extension):
     outputfilepath=os.path.join(outputdirectory,outputfilename)
     # extension = 'csv'
@@ -838,7 +839,7 @@ def fill_redcap_for_selected_scan(args):
         csv_file_df=pd.read_csv(args.stuff[2])
         project_name,subject_name, session_label,acquisition_site_xml,acquisition_datetime_xml,scanner_from_xml,body_part_xml,kvp_xml=get_info_from_xml(xmlfile)
         this_project_redcapfile_latest=project_name+'_latest.csv'
-        api_token='EC6A2206FF8C1D87D4035E61C99290FF'
+        # api_token='EC6A2206FF8C1D87D4035E61C99290FF'
         df_scan_latest=download_latest_redcapfile(api_token,this_project_redcapfile_latest)
         this_session_redcap_repeat_instance_df=df_scan_latest[df_scan_latest['snipr_session']==session_label]
         this_session_redcap_repeat_instance=str(this_session_redcap_repeat_instance_df['redcap_repeat_instance'].item())
