@@ -50,9 +50,9 @@ fi
 
 if [[ ${TYPE_OF_PROGRAM} == 'PROJECT_LEVEL_PRE_PROCESSING' ]] ;
 then
-    /software/project_level_pre_processing.sh $SESSION_ID $XNAT_USER $XNAT_PASS $XNAT_HOST ##/input /output
+    /software/project_level_pre_processing.sh $SESSION_ID $XNAT_USER $XNAT_PASS "${ADDR[0]}" "${ADDR[1]}" "${ADDR[2]}" ##$XNAT_HOST ##/input /output
 fi
 if [[ ${TYPE_OF_PROGRAM} == 'PROJECT_LEVEL_AFTER_PROCESSING' ]] ;
 then
-    /software/project_level_after_processing.sh $SESSION_ID $XNAT_USER $XNAT_PASS $XNAT_HOST ##/input /output
+    /software/project_level_after_processing.sh $SESSION_ID $XNAT_USER $XNAT_PASS "${ADDR[0]}" "${ADDR[1]}" "${ADDR[2]}"  #### $XNAT_HOST ##/input /output
 fi
