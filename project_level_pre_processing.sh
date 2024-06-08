@@ -56,7 +56,7 @@ count=0
     # echo "$SESSION_ID,$SESSION_NAME" >> ${list_accomplished}
     count=$((count+1))
 #     fi
-    # if [ ${count} -ge ${counter_end} ]; then
-    # break
-    # fi
+    if [ ${count} -ge 0 ]; then
+    break
+    fi
 done < <(tail -n +2 "${sessions_list}")
