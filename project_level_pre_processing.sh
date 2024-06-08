@@ -15,6 +15,7 @@ DICOMFILEDIR=/DICOMFILEDIR
 working=/working
 input=/input
 output=/output
+software=/software
 function directory_to_create_destroy(){
 
 rm  -r    ${working_dir}/*
