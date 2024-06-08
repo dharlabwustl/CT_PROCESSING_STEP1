@@ -53,7 +53,7 @@ count=0
     # echo "$SESSION_ID,$SESSION_NAME" >> ${list_accomplished}
     count=$((count+1))
 #     fi
-    # if [ ${count} -gt 3 ]; then
-    # break
-    # fi
+    if [ ${count} -gt 0 ]; then
+    break
+    fi
 done < <(tail -n +2 "${sessions_list}")
