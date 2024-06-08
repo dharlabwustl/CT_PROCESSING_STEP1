@@ -51,7 +51,7 @@ count=0
 
     # echo SESSION_NAME::${SESSION_NAME}
     directory_to_create_destroy
-    /software/processing_before_segmentation.sh ${PROJECT_ID} $XNAT_USER $XNAT_PASS $XNAT_HOST 
+    /software/processing_before_segmentation.sh ${SESSION_ID} $XNAT_USER $XNAT_PASS $XNAT_HOST 
     # fi
     # echo "$SESSION_ID,$SESSION_NAME" >> ${list_accomplished}
     count=$((count+1))
