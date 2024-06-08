@@ -44,7 +44,7 @@ curl -u $XNAT_USER:$XNAT_PASS -X GET $XNAT_HOST/data/projects/${project_ID}/expe
 ######################################
 count=0
   while IFS=',' read -ra array; do
-    if [ ${count} -ge ${counter_start} ]; then
+    # if [ ${count} -ge ${counter_start} ]; then
     echo SESSION_ID::${array[0]}
     SESSION_ID=${array[0]}  #SNIPR02_E10218 ##SNIPR02_E10112 #
     SESSION_NAME=${array[5]} 
@@ -52,11 +52,11 @@ count=0
     # echo SESSION_NAME::${SESSION_NAME}
     directory_to_create_destroy
     /software/processing_before_segmentation.sh ${PROJECT_ID} $XNAT_USER $XNAT_PASS $XNAT_HOST 
-    fi
+    # fi
     # echo "$SESSION_ID,$SESSION_NAME" >> ${list_accomplished}
     count=$((count+1))
 #     fi
-    if [ ${count} -ge ${counter_end} ]; then
-    break
-    fi
+    # if [ ${count} -ge ${counter_end} ]; then
+    # break
+    # fi
 done < <(tail -n +2 "${sessions_list}")
