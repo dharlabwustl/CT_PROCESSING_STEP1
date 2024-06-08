@@ -14,7 +14,7 @@ if echo "$input" | grep -q "+"; then
   read -ra ADDR <<< "$input"
   export XNAT_HOST=${ADDR[0]} 
 else
-export XNAT_HOST=${5} 
+export XNAT_HOST=${XNAT_HOST} 
     echo "'+' is not present in the string"
 fi
 
