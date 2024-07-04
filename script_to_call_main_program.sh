@@ -2,7 +2,7 @@
 SESSION_ID=${1}
 XNAT_USER=${2}
 XNAT_PASS=${3}
-XNAT_HOST=${4}
+export XNAT_HOST=${4}
 TYPE_OF_PROGRAM=${5}
 input=$XNAT_HOST ##"one::two::three::four"
 # Check if '::' is present
