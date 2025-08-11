@@ -87,7 +87,7 @@ docker run \
     ${XNAT_PASS} \
     ${XNAT_HOST} \
     https://github.com/dharlabwustl/CT_PROCESSING_STEP1.git \
-    2
+    1
 
 
 ```
