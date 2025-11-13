@@ -22,6 +22,12 @@ export XNAT_HOST=${XNAT_HOST}
 fi
 
 echo ${TYPE_OF_PROGRAM}::TYPE_OF_PROGRAM
+if [[ ${TYPE_OF_PROGRAM} == PROCESS_BEFORE_SEG_LOCAL_COMPUTER ]] ;
+then
+  image_path=$SESSION_ID
+    /software/pre_processing_local_computer.sh $image_path  ##/input /output
+fi
+
 if [[ ${TYPE_OF_PROGRAM} == 2 ]] ;
 then
     /software/processing_before_segmentation.sh $SESSION_ID $XNAT_USER $XNAT_PASS $XNAT_HOST  ##/input /output
