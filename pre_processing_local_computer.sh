@@ -19,10 +19,10 @@ set -euo pipefail
 
 # ------------- Arguments ------------------------------------------------------
 
-if [[ $# -lt 1 ]]; then
-  echo "Usage: $0 /path/to/input.nii.gz [/workinginput] [/workingoutput] [/outputinsidedocker]"
-  exit 1
-fi
+#if [[ $# -lt 1 ]]; then
+#  echo "Usage: $0 /path/to/input.nii.gz [/workinginput] [/workingoutput] [/outputinsidedocker]"
+#  exit 1
+#fi
 
 INPUT_NIFTI=$(ls "/input/SCANS/2/*.nii") ##$1"
 working_dir="${2:-/workinginput}"
