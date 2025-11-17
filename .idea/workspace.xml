@@ -56,7 +56,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/media/atul/WDJan2022/WASHU_WORKS/PROJECTS/DOCKERIZE/CT_PROCESSING_STEP1",
+    "last_opened_file_path": "/media/atul/WDJan2022/WASHU_WORKS/PROJECTS/DOCKERIZE/CT_CSF_INFARCT_SEGMN",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
@@ -419,7 +419,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685741389695</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

@@ -22,7 +22,7 @@ export XNAT_HOST=${XNAT_HOST}
 fi
 
 echo ${TYPE_OF_PROGRAM}::TYPE_OF_PROGRAM
-if [[ ${TYPE_OF_PROGRAM} == PROCESS_BEFORE_SEG_LOCAL_COMPUTER ]] ;
+if [[ ${TYPE_OF_PROGRAM} == "PROCESS_BEFORE_SEG_LOCAL_COMPUTER" ]] ;
 then
   image_path=$SESSION_ID
   echo "I AM HERE:: $image_path"
