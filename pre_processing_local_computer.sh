@@ -24,7 +24,7 @@ set -euo pipefail
 #  exit 1
 #fi
 
-INPUT_NIFTI=$(ls "/input/SCANS/2/*.nii") ##$1"
+INPUT_NIFTI=$(ls "/input/SCANS/2/NIFTI/*.nii") ##$1"
 working_dir="${2:-/workinginput}"
 output_directory="${3:-/workingoutput}"
 final_output_directory="${4:-/outputinsidedocker}"
