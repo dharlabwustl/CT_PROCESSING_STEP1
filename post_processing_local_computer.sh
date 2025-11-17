@@ -51,7 +51,7 @@ echo ">>> Final output directory : $final_output_directory"
 # Copy local NIfTI into working_dir
 echo ">>> Copying input NIfTI to working directory..."
 cp "$INPUT_NIFTI" "$working_dir/"
-
+cp /input/SCANS/2/PREPROCESS_SEGM/*.* "${working_dir}/"
 # ------------- Run your existing processing steps ----------------------------
 
 echo ">>> Running stroke_ct_processing_1.sh ..."
