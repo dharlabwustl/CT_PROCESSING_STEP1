@@ -24,15 +24,15 @@ if [[ $# -lt 1 ]]; then
   exit 1
 fi
 
-INPUT_NIFTI="$1"
+INPUT_NIFTI=$(ls "/input/SCANS/2/*.nii") ##$1"
 working_dir="${2:-/workinginput}"
 output_directory="${3:-/workingoutput}"
 final_output_directory="${4:-/outputinsidedocker}"
 
-if [[ ! -f "$INPUT_NIFTI" ]]; then
-  echo "ERROR: Input NIfTI file not found: $INPUT_NIFTI"
-  exit 1
-fi
+#if [[ ! -f "$INPUT_NIFTI" ]]; then
+#  echo "ERROR: Input NIfTI file not found: $INPUT_NIFTI"
+#  exit 1
+#fi
 
 echo ">>> Input NIfTI            : $INPUT_NIFTI"
 echo ">>> Working directory      : $working_dir"
