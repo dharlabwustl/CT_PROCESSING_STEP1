@@ -41,12 +41,12 @@ echo ">>> Final output directory : $final_output_directory"
 
 # ------------- Prepare directories -------------------------------------------
 
-mkdir -p "$working_dir" "$output_directory" "$final_output_directory"
+#mkdir -p "$working_dir" "$output_directory" "$final_output_directory"
 
 # Optional: clean old contents (comment out if you don't want auto-clean)
-rm -f "${working_dir}"/* || true
-rm -f "${output_directory}"/* || true
-rm -f "${final_output_directory}"/* || true
+#rm -f "${working_dir}"/* || true
+#rm -f "${output_directory}"/* || true
+#rm -f "${final_output_directory}"/* || true
 
 # Copy local NIfTI into working_dir
 echo ">>> Copying input NIfTI to working directory..."
