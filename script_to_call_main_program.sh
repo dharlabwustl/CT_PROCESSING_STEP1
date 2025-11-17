@@ -24,9 +24,15 @@ fi
 echo ${TYPE_OF_PROGRAM}::TYPE_OF_PROGRAM
 if [[ ${TYPE_OF_PROGRAM} == "PROCESS_BEFORE_SEG_LOCAL_COMPUTER" ]] ;
 then
-  image_path=$SESSION_ID
+#  image_path=$SESSION_ID
   echo "I AM HERE:: $image_path"
-    /software/pre_processing_local_computer.sh $image_path  ##/input /output
+    /software/pre_processing_local_computer.sh $SESSION_ID  ##/input /output
+fi
+if [[ ${TYPE_OF_PROGRAM} == "PROCESS_AFTER_SEG_LOCAL_COMPUTER" ]] ;
+then
+#  image_path=$SESSION_ID
+  echo "I AM HERE:: $image_path"
+    /software/post_processing_local_computer.sh $SESSION_ID  ##/input /output
 fi
 
 if [[ ${TYPE_OF_PROGRAM} == 2 ]] ;
