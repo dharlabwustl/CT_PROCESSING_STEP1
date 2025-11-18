@@ -73,3 +73,4 @@ cp "${output_directory}"/* "${final_output_directory}/" || true
 
 echo ">>> Segmentation pipeline finished."
 echo ">>> Final results are in: ${final_output_directory}"
+cp ${final_output_directory}/*.*  /input/SCANS/2/PREPROCESS_SEGM/
