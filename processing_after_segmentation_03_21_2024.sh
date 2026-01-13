@@ -156,7 +156,7 @@ for niftifile_csvfilename in ${working_dir}/*NIFTILOCATION.csv; do
   if [[ "${outputfiles_present: -1}" -eq 1 ]]; then
     echo " I AM THE ONE"
   fi
-  if [[ 1 -gt 0 ]]; then #"${outputfiles_present: -1}" -eq 0 ]]; then
+  if [[ "${outputfiles_present: -1}" -eq 0 ]]; then  ###1 -gt 0 ]]; then #
 
     echo "outputfiles_present:: "${outputfiles_present: -1}"::outputfiles_present"
     copy_scan_data ${niftifile_csvfilename} ${working_dir}
