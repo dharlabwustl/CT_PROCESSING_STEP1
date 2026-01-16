@@ -958,6 +958,41 @@ def find_num_axial_thin(args):
     list_values_df.columns=['axial_number','axial_thin_number']
     list_values_df.to_csv(csvfilename,index=False)
     return
+def downloadallfiletolocaldir():
+    print(sys.argv)
+    sessionId=str(sys.argv[1])
+    scanId=str(sys.argv[2])
+    resource_dirname=str(sys.argv[3])
+    output_dirname=str(sys.argv[4])
+
+    #xnatSession = XnatSession(username=XNAT_USER, password=XNAT_PASS, host=XNAT_HOST)
+    url = (("/data/experiments/%s/scans/%s/resources/" + resource_dirname+ "/files?format=zip")  %
+           (sessionId, scanId))
+
+    #xnatSession.renew_httpsession()
+    response = xnatSession.httpsess.get(xnatSession.host + url)
+    zipfilename=sessionId+scanId+'.zip'
+    with open(zipfilename, "wb") as f:
+        for chunk in response.iter_content(chunk_size=512):
+            if chunk:  # filter out keep-alive new chunks
+                f.write(chunk)
+    command='rm -r /ZIPFILEDIR/* '
+    subprocess.call(command,shell=True)
+    command = 'unzip -d /ZIPFILEDIR ' + zipfilename
+    subprocess.call(command,shell=True)
+    #xnatSession.close_httpsession()
+    copy_allfiles_to_a_dir(output_dirname)
+
+    return True
+def copy_allfiles_to_a_dir(dir_name):
+    for dirpath, dirnames, files in os.walk('/ZIPFILEDIR'):
+        #                print(f'Found directory: {dirpath}')
+        for file_name in files:
+            # file_extension = pathlib.Path(file_name).suffix
+            # if 'nii' in file_extension or 'gz' in file_extension:
+            command='cp ' + os.path.join(dirpath,file_name) + '  ' + dir_name + '/'
+            subprocess.call(command,shell=True)
+            print(os.path.join(dirpath,file_name))
 
 def select_scan_for_analysis(args):
     sessionId=args.stuff[1]
