@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="33d5bb5b-874e-4616-882d-a7f4f094f636" name="Changes" comment="commit day 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -424,7 +425,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685741389695</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
