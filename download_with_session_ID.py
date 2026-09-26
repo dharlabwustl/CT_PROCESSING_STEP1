@@ -23,7 +23,7 @@ import utilities_using_xnat_python # given_sessionid_get_project_n_subjectids
 from biomarkerdbclass import  BiomarkerDB
 from redcapapi_functions import *
 catalogXmlRegex = re.compile(r'.*\.xml$')
-XNAT_HOST_URL='http://snipr02.nrg.wustl.edu' ##os.environ['XNAT_HOST']  #'http://snipr02.nrg.wustl.edu:8080' #'https://snipr02.nrg.wustl.edu' #'https://snipr.wustl.edu'
+XNAT_HOST_URL=os.environ['XNAT_HOST'] ####'http://snipr02.nrg.wustl.edu' ##os.environ['XNAT_HOST']  #'http://snipr02.nrg.wustl.edu:8080' #'https://snipr02.nrg.wustl.edu' #'https://snipr.wustl.edu'
 XNAT_HOST = XNAT_HOST_URL # os.environ['XNAT_HOST'] #
 XNAT_USER = os.environ['XNAT_USER']#
 XNAT_PASS =os.environ['XNAT_PASS'] #
